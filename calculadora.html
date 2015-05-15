@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Galones de Pintura que Necesito</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <script type="text/javascript">
+        function Superficie(a,b,c) {
+            var a = document.getElementById('ancho').value;
+            var b = document.getElementById('alto').value;
+            var c = document.getElementById('rendimiento').value;
+            var Area = (a * b) / c;
+            return document.getElementById('galones').innerHTML = Math.ceil(Area);
+            //Math.redound(Area)
+            //Math.floor(Area)
+        }
+    </script>
+  </head>
+
+  <body>
+    <header>
+        <h1>Calculadora de Pintura</h1>
+        <h2>¿Cuanta pintura necesito?</h2>
+    </header>
+
+    <section id="calculadora">
+        <h3>Medidas superficie a pintar</h3>
+        <p>Ancho: <input type="number" name="ancho" id="ancho"> Metros</p>
+        <p>Alto: <input type="number" name="alto" id="alto"> Metros</p>
+        <p>*Rendimiento galón de pintura: <input type="number" name="rendimiento" id="rendimiento" value="35"> Metros aprox.</p>
+         <h5>*Las pinturas en <b>GENERAL</b> rinden 35 metros cuadrados por galón y por mano, pero esto puede variar dependiendo del perfil de rugosidad de la superficie, el espesor de película que apliquemos, y de la capacidad de absorción de ella.<br>
+        <font color="#ff0000">Revisar especificaciones técnicas del galón.</font></h5>
+        <input type="button" value="Calcular" onclick="Superficie()">
+    </section>
+    <section id="resultado">
+        <h2>Usted necesita <label id="galones">0</label>  Galón(es).</h2>
+    </section>
+
+  </body>
+</html>
