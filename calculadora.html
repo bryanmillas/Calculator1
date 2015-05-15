@@ -4,6 +4,51 @@
     <title>Galones de Pintura que Necesito</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <style type="text/css">
+        #calculadora {
+            max-width: 500px;
+            max-height: 350px;
+            display: block;
+            border: 1px solid #999999;
+            background-color: #fff;
+            margin: 0px auto;}
+        h1 {font-family: arial, helvetica, sans-serif;
+            font-size: 15px;
+            color: #fff;
+            background-color: #0000ff;
+            margin: 0px;
+            padding: 10px;
+            font-weight: normal;}
+        h2 {font-family: arial, helvetica, sans-serif;
+            font-size: 15px;
+            color: #606060;
+            margin: 0px;
+            padding: 10px;
+            font-weight: normal;}
+        h3 {font-family: arial, helvetica, sans-serif;
+            font-size: 13px;
+            color: #606060;
+            margin: 0px;
+            padding: 0px 10px;
+            font-weight: normal;}
+        h4 {font-family: arial, helvetica, sans-serif;
+            font-size: 20px;
+            color: #606060;
+            margin: 0px;
+            padding: 10px;
+            font-weight: normal;
+            text-align: center;}
+        .cuadros {width: 50px;
+            height: auto;
+            padding: 0px 5px;
+            font-size: 18px;}
+        .button {
+            font-size: 15px;
+            font-weight: normal;}
+        #contenedor_button{margin: 0px auto;
+            text-align: center;
+            padding: 10px;}
+    </style>
     <script type="text/javascript">
         function Superficie(a,b,c) {
             var a = document.getElementById('ancho').value;
@@ -18,23 +63,20 @@
   </head>
 
   <body>
-    <header>
+    <div id="calculadora">
         <h1>Calculadora de Pintura</h1>
-        <h2>¿Cuanta pintura necesito?</h2>
-    </header>
-
-    <section id="calculadora">
-        <h3>Medidas superficie a pintar</h3>
-        <p>Ancho: <input type="number" name="ancho" id="ancho" placeholder="0"> Metros</p>
-        <p>Alto: <input type="number" name="alto" id="alto" placeholder="0"> Metros</p>
-        <p>*Rendimiento galón de pintura: <input type="number" name="rendimiento" id="rendimiento" value="35"> Metros aprox.</p>
-         <h5>*Las pinturas en <b>GENERAL</b> rinden 35 metros cuadrados por galón y por mano, pero esto puede variar dependiendo del perfil de rugosidad de la superficie, el espesor de película que apliquemos, y de la capacidad de absorción de ella.<br>
-        <font color="#ff0000">Revisar especificaciones técnicas del galón.</font></h5>
-        <input type="button" value="Calcular" onclick="Superficie()">
-    </section>
-    <section id="resultado">
-        <h2>Usted necesita <label id="galones">0</label>  Galón(es).</h2>
-    </section>
+        <h2>Medidas superficie a pintar:</h2>
+        <h2>Ancho: <input type="number" name="ancho" id="ancho" placeholder="0" class="cuadros"> mts. <b>X</b> Alto: <input type="number" name="alto" id="alto" placeholder="0" class="cuadros"> mts.<br>
+        <p>*Rendimiento galón de pintura: <input type="number" name="rendimiento" id="rendimiento" value="35" class="cuadros"> mts. aprox.</h2>
+         <h3>*Las pinturas en <b>GENERAL</b> rinden 35 metros cuadrados por galón y por mano, pero esto puede variar dependiendo del perfil de rugosidad de la superficie, el espesor de película que apliquemos, y de la capacidad de absorción de ella.<br>
+        <font color="#ff0000">Revisar especificaciones técnicas del galón.</font></h3>
+        <div id="contenedor_button">
+            <input type="button" value="Calcular" onclick="Superficie()" class="button">
+        </div>
+        <div id="resultado">
+            <h4>Necesita <font color="#0000ff"><label id="galones">0</label></font>  Galón(es).</h4>
+        </div>
+    </div>
 
   </body>
 </html>
